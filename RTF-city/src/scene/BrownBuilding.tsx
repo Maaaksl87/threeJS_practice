@@ -26,6 +26,8 @@ export function BrownBuilding({ windowSeed, ...props }: BrownBuildingProps) {
           geometry={nodes.BrownBuilding_3.geometry}
           material={materials.window_glass}
           seed={windowSeed}
+          //кількість вікон які отримують справжнє світло
+          areaLights={6}
         />
       </group>
     </group>
