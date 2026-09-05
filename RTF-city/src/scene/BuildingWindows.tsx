@@ -114,7 +114,7 @@ export function BuildingWindows({
   return (
     <>
       {windows.map((window, i) => (
-        <mesh key={i} geometry={window.geometry} material={window.material} receiveShadow />
+        <mesh key={i} geometry={window.geometry} material={window.material} />
       ))}
       {areaLit.map(({ schedule, placement }, i) => (
         <rectAreaLight

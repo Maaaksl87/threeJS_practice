@@ -5,7 +5,7 @@ import { RepeatWrapping, SRGBColorSpace } from 'three'
 const GROUND_SIZE = 12
 
 export function Ground() {
-  const grass = useTexture('/textures/grass.png')
+  const grass = useTexture('/textures/grass.webp')
 
   useMemo(() => {
     grass.colorSpace = SRGBColorSpace

@@ -21,12 +21,15 @@ type GLTFResult = GLTF & {
   }
 }
 
-export function Model(props: ThreeElements['group']) {
+export function Model({
+  emissiveMaterial,
+  ...props
+}: ThreeElements['group'] & { emissiveMaterial?: THREE.Material }) {
   const { nodes, materials } = useGLTF('/models/lamp-post.glb') as unknown as GLTFResult
   return (
     <group {...props} dispose={null}>
       <mesh geometry={nodes['Node-Mesh'].geometry} material={materials.lambert4SG} />
-      <mesh geometry={nodes['Node-Mesh_1'].geometry} material={materials.lambert2SG} />
+      <mesh geometry={nodes['Node-Mesh_1'].geometry} material={emissiveMaterial ?? materials.lambert2SG} />
       <mesh geometry={nodes['Node-Mesh_2'].geometry} material={materials.lambert3SG} />
     </group>
   )

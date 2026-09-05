@@ -1,5 +1,5 @@
-export const SUN_RADIUS = 9
-export const SUN_HEIGHT = 6
+export const SUN_RADIUS = 12
+export const SUN_HEIGHT = 10
 export const HORIZON_FADE = 0.15
 export const SUN_Z_OFFSET = SUN_RADIUS * 0.35
 export function celestialPosition(t: number, radius: number, height: number, zOffset: number) {
