@@ -4,7 +4,7 @@ import { DirectionalLight, Group, MathUtils } from 'three'
 import { world } from '../world'
 import { celestialPosition, HORIZON_FADE, SUN_RADIUS, SUN_HEIGHT, SUN_Z_OFFSET } from '../celestial'
 
-const MOON_COLOR = '#70a8d9ff'
+const MOON_COLOR = '#70a8d9'
 const MOON_INTENSITY = 0.8
 
 export function Moon() {
@@ -12,7 +12,8 @@ export function Moon() {
   const light = useRef<DirectionalLight>(null!)
 
   useEffect(() => {
-    light.current.shadow.camera.updateProjectionMatrix()
+    light.current.shadow.camera.updateProjectionMatrix();
+    light.current.shadow.needsUpdate = true
   }, [])
 
   useFrame(() => {
@@ -30,15 +31,6 @@ export function Moon() {
         ref={light}
         color={MOON_COLOR}
         intensity={0}
-        castShadow
-        shadow-mapSize={[512, 512]}
-        shadow-intensity={0.5}
-        shadow-camera-near={0.5}
-        shadow-camera-far={20}
-        shadow-camera-left={-6}
-        shadow-camera-right={6}
-        shadow-camera-top={6}
-        shadow-camera-bottom={-6}
       />
       <mesh>
         <sphereGeometry args={[0.35, 16, 16]} />

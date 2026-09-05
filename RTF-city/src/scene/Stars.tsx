@@ -12,7 +12,7 @@ const STAR_SEED = 20240614
 
 export function Stars() {
   const material = useRef<PointsMaterial>(null!)
-  const starTexture = useTexture('/textures/star.png')
+  const starTexture = useTexture('/textures/star.webp')
 
   const positions = useMemo(() => {
     const rnd = mulberry32(STAR_SEED)

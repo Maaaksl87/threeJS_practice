@@ -10,6 +10,7 @@ export function Sun() {
 
   useEffect(() => {
     light.current.shadow.camera.updateProjectionMatrix()
+    light.current.shadow.needsUpdate = true
   }, [])
 
   useFrame(() => {
@@ -30,7 +31,7 @@ export function Sun() {
         ref={light}
         castShadow
         intensity={0}
-        shadow-mapSize={[1024, 1024]}
+        shadow-mapSize={[512, 512]}
         shadow-camera-near={0.5}
         shadow-camera-far={20}
         shadow-camera-left={-6}
