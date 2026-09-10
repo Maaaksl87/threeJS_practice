@@ -7,6 +7,7 @@ import { Effects } from './scene/Effects'
 import { WarmUp } from './scene/WarmUp'
 import { LoadingScreen } from './LoadingScreen'
 import { TimeControls } from './TimeControls'
+import { FpsGui } from './scene/FpsGui'
 
 export default function App() {
   const [ready, setReady] = useState(false)
@@ -24,7 +25,7 @@ export default function App() {
         </Suspense>
         <OrbitControls minDistance={9} maxDistance={15} maxPolarAngle={Math.PI / 2} target={[0, 1.2, 0]} />
         <Effects />
-
+        <FpsGui hidden={!ready} />
       </Canvas>
     </>
   )
